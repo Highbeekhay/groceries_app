@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:groceries_app/Cart/cart.dart';
+import 'package:groceries_app/Favorite/favorite.dart';
 import 'package:groceries_app/Home/categories.dart';
 import 'package:groceries_app/Home/popular.dart';
+import 'package:groceries_app/Profile/profile.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentindex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +42,7 @@ class HomePage extends StatelessWidget {
                               Navigator.pop(context);
                             },
                             icon: const Icon(
-                              Icons.arrow_back_ios,
+                              Icons.arrow_back_ios_new,
                               color: Colors.white,
                             ),
                           ),
@@ -178,6 +188,86 @@ class HomePage extends StatelessWidget {
             const Popular(),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentindex,
+        onTap: (index) {
+          setState(() {
+            currentindex = index;
+          });
+        },
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.green,
+        items: [
+          BottomNavigationBarItem(
+            icon: IconButton(
+              icon: const Icon(
+                Icons.home,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ),
+                );
+              },
+            ),
+            label: 'Home',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: IconButton(
+              icon: const Icon(
+                Icons.favorite_border,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Favorite(),
+                  ),
+                );
+              },
+            ),
+            label: 'Favorite',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: IconButton(
+              icon: const Icon(
+                Icons.shopping_cart_outlined,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Cart(),
+                  ),
+                );
+              },
+            ),
+            label: 'Cart',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: IconButton(
+              icon: const Icon(
+                Icons.person_2_outlined,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Profile(),
+                  ),
+                );
+              },
+            ),
+            label: 'Profile',
+            backgroundColor: Colors.green,
+          ),
+        ],
       ),
     );
   }
