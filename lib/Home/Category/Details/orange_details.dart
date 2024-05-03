@@ -55,7 +55,7 @@ class _OrangeDetailsState extends State<OrangeDetails> {
                               Navigator.pop(context);
                             },
                             icon: const Icon(
-                              Icons.arrow_back_ios,
+                              Icons.arrow_back_ios_new,
                               color: Colors.green,
                             ),
                           ),
@@ -249,7 +249,7 @@ class _OrangeDetailsState extends State<OrangeDetails> {
                 fixedSize: const MaterialStatePropertyAll(
                   Size(
                     300,
-                    30,
+                    40,
                   ),
                 ),
                 shape: MaterialStatePropertyAll(

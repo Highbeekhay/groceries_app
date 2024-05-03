@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries_app/Home/Welcome%20Page/sign_up.dart';
 import 'package:groceries_app/Home/home_page.dart';
 
 class MyWelcomePage extends StatelessWidget {
@@ -61,9 +62,16 @@ class MyWelcomePage extends StatelessWidget {
                     Colors.green.shade50,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUp(),
+                    ),
+                  );
+                },
                 child: const Text(
-                  'Register',
+                  'Sign Up',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

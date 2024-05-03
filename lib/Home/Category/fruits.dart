@@ -36,21 +36,13 @@ class Fruits extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const Row(
-                          children: [
-                            Icon(
-                              Icons.location_on_outlined,
-                              color: Colors.white70,
-                            ),
-                            Text(
-                              'Fruits',
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                              ),
-                            ),
-                          ],
+                        const Text(
+                          'Fruits',
+                          style: TextStyle(
+                            color: Colors.white70,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
                         ),
                         CircleAvatar(
                           radius: 20,
